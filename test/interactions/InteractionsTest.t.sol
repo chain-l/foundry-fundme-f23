@@ -21,11 +21,11 @@ contract InteractionsTest is Test {
         vm.deal(USER, STARTING_BALANCE);
     }
 
-    function testUserCanFund() public {
+    function testUserCanFundInteractions() public {
         FundFundMe fundFundMe = new FundFundMe();
         fundFundMe.fundFundMe(address(fundMe));
 
         address funder = fundMe.getFunder(0);
-        assertEq(funder.USER);
+        assertEq(funder, USER);
     }
 }
